@@ -1,0 +1,4 @@
+VBGROUP 5.0
+StartupProject=Northwind.vbp
+Project=BusinessLayer\NorthwindBusiness.vbp
+Project=DataLayer\NorthwindData.vbp

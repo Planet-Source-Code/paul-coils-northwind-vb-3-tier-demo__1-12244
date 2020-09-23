@@ -1,0 +1,117 @@
+CREATE PROCEDURE NW_DelCustomer
+   @CustomerID   NVarChar(5)
+AS
+
+SET NOCOUNT ON
+
+DELETE FROM Customers
+ WHERE CustomerID = @CustomerID
+
+GO
+CREATE PROCEDURE NW_InsCustomer
+   @CustomerID   NVarChar(5),
+   @CompanyName   NVarChar(40),
+   @ContactName   NVarChar(30),
+   @ContactTitle   NVarChar(30),
+   @Address   NVarChar(60),
+   @City   NVarChar(15),
+   @Region   NVarChar(15),
+   @PostalCode   NVarChar(10),
+   @Country   NVarChar(15),
+   @Phone   NVarChar(24),
+   @Fax   NVarChar(24)
+AS
+
+SET NOCOUNT ON
+
+INSERT INTO Customers(CustomerID, CompanyName, ContactName, ContactTitle, Address, City, Region, PostalCode, Country, Phone, Fax)
+ VALUES (@CustomerID, @CompanyName, @ContactName, @ContactTitle, @Address, @City, @Region, @PostalCode, @Country, @Phone, @Fax)
+
+GO
+CREATE PROCEDURE NW_UpdCustomer
+   @CustomerID   NVarChar(5),
+   @CompanyName   NVarChar(40),
+   @ContactName   NVarChar(30),
+   @ContactTitle   NVarChar(30),
+   @Address   NVarChar(60),
+   @City   NVarChar(15),
+   @Region   NVarChar(15),
+   @PostalCode   NVarChar(10),
+   @Country   NVarChar(15),
+   @Phone   NVarChar(24),
+   @Fax   NVarChar(24)
+AS
+
+SET NOCOUNT ON
+
+UPDATE Customers
+   SET CustomerID = @CustomerID,
+       CompanyName = @CompanyName,
+       ContactName = @ContactName,
+       ContactTitle = @ContactTitle,
+       Address = @Address,
+       City = @City,
+       Region = @Region,
+       PostalCode = @PostalCode,
+       Country = @Country,
+       Phone = @Phone,
+       Fax = @Fax
+ WHERE CustomerID = @CustomerID
+
+GO
+CREATE PROCEDURE NW_SelCustomer
+   @CustomerID   NVarChar(5)
+AS
+
+SET NOCOUNT ON
+
+SELECT TOP 200 CustomerID,
+       CompanyName,
+       ContactName,
+       ContactTitle,
+       Address,
+       City,
+       Region,
+       PostalCode,
+       Country,
+       Phone,
+       Fax
+  FROM Customers
+ WHERE CustomerID = @CustomerID
+
+GO
+CREATE PROCEDURE NW_SelAllCustomers
+AS
+
+SET NOCOUNT ON
+
+SELECT TOP 200 CustomerID,
+       CompanyName,
+       ContactName,
+       ContactTitle,
+       Address,
+       City,
+       Region,
+       PostalCode,
+       Country,
+       Phone,
+       Fax
+ FROM Customers
+
+GO
+
+GRANT EXECUTE ON NW_SelAllCustomers TO PUBLIC
+GO
+
+GRANT EXECUTE ON NW_UpdCustomer TO PUBLIC
+GO
+
+GRANT EXECUTE ON NW_InsCustomer TO PUBLIC
+GO
+
+GRANT EXECUTE ON NW_DelCustomer TO PUBLIC
+GO
+
+GRANT EXECUTE ON NW_SelCustomer TO PUBLIC
+GO
+

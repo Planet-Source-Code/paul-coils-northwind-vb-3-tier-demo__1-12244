@@ -1,0 +1,8 @@
+frmCustomers = 66, 66, 777, 637, , 88, 88, 700, 659, C
+frmCustomersMaint = 132, 132, 744, 703, , 110, 110, 722, 681, C
+clsCustomers = 0, 0, 612, 571, 
+clsCustomer = 264, 264, 876, 835, 
+modApiLibrary = 176, 176, 788, 747, 
+modErrLibrary = 198, 198, 810, 769, 
+modMain = 242, 242, 854, 813, 
+modFormLibrary = 220, 220, 832, 791, 
